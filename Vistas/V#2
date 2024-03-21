@@ -1,0 +1,9 @@
+-- Definición de la vista View2
+CREATE VIEW View2 AS
+SELECT actor_id, COUNT(film_id) AS num_films,
+ROW_NUMBER() OVER (ORDER BY COUNT(film_id) DESC) AS row_num,
+RANK() OVER (ORDER BY COUNT(film_id) DESC) AS rank_,
+DENSE_RANK() OVER (ORDER BY COUNT(film_id) DESC) AS dense_rank_
+FROM film_actor
+GROUP BY actor_id
+HAVING num_films > 5;
