@@ -1,0 +1,19 @@
+DELIMITER //
+-- Creación de la tabla actor_2
+CREATE PROCEDURE DosTablas() 
+BEGIN
+CREATE TABLE actor_2 (
+    actor_id INT PRIMARY KEY,
+    first_name VARCHAR(45),
+    last_name VARCHAR(45)
+);
+
+-- Creación de la tabla film_1
+CREATE TABLE IF NOT EXISTS film_1 (
+    film_id INT PRIMARY KEY,
+    title VARCHAR(255),
+    release_year YEAR
+);
+END//
+DELIMITER ;
+CALL DosTablas();
