@@ -1,0 +1,6 @@
+CREATE FUNCTION RoundAndReplace(input DECIMAL(10,2))
+RETURNS VARCHAR(50)
+DETERMINISTIC
+RETURN REPLACE(CONVERT(input, CHAR), '.', '-');
+select RoundAndReplace (10);
+ 
