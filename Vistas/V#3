@@ -1,0 +1,6 @@
+-- Definición de la vista View3
+CREATE VIEW View3 AS 
+SELECT MIN(fa.actor_id) AS min_actor_id, MAX(fa.actor_id) AS max_actor_id
+FROM film_actor fa
+JOIN actor_2 a ON fa.actor_id = a.actor_id
+WHERE a.first_name = 'John';
