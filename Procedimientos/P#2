@@ -1,0 +1,31 @@
+DROP PROCEDURE IF EXISTS InsertRecords;
+DELIMITER //
+CREATE PROCEDURE InsertRecords() 
+BEGIN
+   INSERT INTO actor_2 (actor_id, first_name, last_name) VALUES 
+(1, 'Johnny', 'Depp'), 
+(2, 'Brad', 'Pitt'), 
+(3, 'Angelina', 'Jolie'), 
+(4, 'Leonardo', 'DiCaprio'), 
+(5, 'Tom', 'Cruise'), 
+(6, 'Meryl', 'Streep'), 
+(7, 'Jennifer', 'Lawrence'), 
+(8, 'Denzel', 'Washington'), 
+(9, 'Natalie', 'Portman'), 
+(10, 'Hugh', 'Jackman');
+
+    -- Inserción de registros en la tabla film_1
+    INSERT INTO film_1 (film_id, title, release_year) VALUES 
+    (1, 'Inception', '2010'),
+    (2, 'The Dark Knight', '2008'),
+    (3, 'Pirates of the Caribbean: The Curse of the Black Pearl', '2003'),
+    (4, 'Gladiator', '2000'),
+    (5, 'Titanic', '1997'),
+    (6, 'The Shawshank Redemption', '1994'),
+    (7, 'Forrest Gump', '1994'),
+    (8, 'The Godfather', '1972'),
+    (9, 'Schindler\'s List', '1993'),
+    (10, 'The Matrix', '1999');
+END//
+DELIMITER ;
+CALL InsertRecords();
