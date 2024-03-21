@@ -1,0 +1,6 @@
+-- Definición de la vista View1
+CREATE VIEW View1 AS
+SELECT actor_id, SUM(film_id) AS total_films, AVG(film_id) AS avg_films
+FROM film_actor
+GROUP BY actor_id
+ORDER BY total_films;
